@@ -1,0 +1,204 @@
+$primary: #008bd0;
+$primary-hover: adjust-color($primary, $lightness: -1);
+$text-color: rgba(0, 0, 0, 0.5);
+$text-color-footer: rgba(0, 0, 0, 0.8);
+$footer-background-color: #e6e6e6;
+
+/* Wordpress hacks */
+main#primary,
+.content-outer.container,
+#wrapper.site-content {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer#footer,
+header#masthead {
+  display: none;
+}
+
+.cdio {
+  &-header {
+    padding: 2rem 4rem 4rem 4rem;
+    text-align: center;
+    background: $primary;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-ifsc {
+      align-self: start;
+      width: 5rem;
+    }
+    &-subtitle {
+      margin: 2rem 0 1rem 0;
+      color: white;
+    }
+    &-description {
+      margin: 0;
+      color: white;
+    }
+    &-art {
+      max-width: 600px;
+      width: 100%;
+    }
+    &-logo {
+      max-width: 500px;
+      width: 100%;
+    }
+    &-description {
+      font-size: 10pt;
+      max-width: 700px;
+      text-align: justify;
+    }
+  }
+  &-content {
+    padding: 4rem;
+    text-align: center;
+    background-color: white;
+    color: $primary;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-cards {
+      display: flex;
+      max-width: 800px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: stretch;
+      margin-bottom: 3rem;
+    }
+
+    &-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(25% - 3rem);
+
+      &-title {
+        display: block;
+        color: $text-color;
+        font-weight: 700;
+        font-size: 25px;
+      }
+    }
+    &-title {
+      color: $primary;
+    }
+    &-subtitle {
+      color: $text-color;
+      margin: 2rem 0 0 0;
+    }
+    &-img {
+      &-benchmarking {
+        margin-top: 2rem;
+        width: 100%;
+        max-width: 800px;
+      }
+      &-cdio {
+        display: block;
+        margin: 0 0 2rem 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &-footer {
+    background-color: $footer-background-color;
+    justify-content: center;
+    display: flex;
+    &-wrapper {
+      display: flex;
+      max-width: 1280px;
+      justify-content: space-between;
+    }
+    .cdio {
+      &-contacts,
+      &-members {
+        padding: 4rem;
+      }
+      &-member {
+        &s-title {
+          color: $primary;
+        }
+        margin: 1rem 0;
+        &-title {
+          font-size: 1rem;
+          color: $primary;
+          margin: 0;
+        }
+        &-description {
+          margin: 0;
+          color: $text-color-footer;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+      &-contact {
+        &s-dalen-img {
+          max-width: 20rem;
+        }
+        display: flex;
+        margin: 1rem 0;
+        align-items: center;
+        &-label {
+          color: $text-color-footer;
+          font-size: 12px;
+          font-weight: 400;
+          padding: 0 0 0 1rem;
+          margin: 0;
+        }
+        &-icon {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cdio {
+    &-content {
+      &-card {
+        width: 25%;
+        &-title {
+          font-size: 20px;
+        }
+      }
+    }
+    &-footer {
+      &-wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+      .cdio {
+        &-contacts,
+        &-members {
+          box-sizing: border-box;
+          width: 100%;
+        }
+        &-contacts {
+          padding: 2rem;
+        }
+        &-members {
+          padding: 2rem 2rem 0 2rem;
+        }
+      }
+    }
+    &-content {
+      padding: 2rem;
+    }
+  }
+}
